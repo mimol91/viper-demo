@@ -24,9 +24,9 @@ var stringToLocationHookFun = func(f reflect.Type, t reflect.Type, data interfac
 }
 
 type RootConf struct {
-	App           AppConf
-	Curlec        CurlecConf
-	Elasticsearch ElasticsearchConf
+	App           *AppConf
+	Curlec        *CurlecConf
+	Elasticsearch *ElasticsearchConf
 }
 type AppConf struct {
 	Name string

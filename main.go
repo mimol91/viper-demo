@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"time"
 
 	"demo-viper/conf"
 	"demo-viper/curlec"
@@ -18,6 +19,14 @@ func main() {
 	esClient := es.NewClient(conf.R.Elasticsearch.Host)
 	mandateRepo := es.NewRepo(esClient, conf.R.Elasticsearch.Repository.Mapping["mandate"])
 	mandateRepo.Foo()
+
+	go func() {
+		for {
+			time.Sleep(time.Second)
+			curlecClient.Foo()
+		}
+
+	}()
 
 	select {}
 
