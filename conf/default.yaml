@@ -1,0 +1,14 @@
+app:
+  name: "" #Read from ENV_VARS
+
+curlec:
+  host: "https://curlec.com"
+  merchantID: "12345ZZ"
+  location: "Asia/Singapore"
+  cacheTTL: 8000000000
+
+elasticsearch:
+  host: "https://elatic.com"
+  repository:
+    mapping:
+      mandate: "/conf/mandate.yaml"
